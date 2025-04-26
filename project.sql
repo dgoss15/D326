@@ -215,6 +215,8 @@ CALL refresh_reports();
 SELECT * FROM detailed_report LIMIT 25;
 SELECT * FROM summary_report LIMIT 25;
 
+SELECT COUNT(*) FROM detailed_report;
+SELECT COUNT(*) FROM summary_report;
 
 
 
