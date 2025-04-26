@@ -212,6 +212,8 @@ $$;
 --Call the stored procedure
 CALL refresh_reports();
 
+SELECT * FROM detailed_report LIMIT 25;
+SELECT * FROM summary_report LIMIT 25;
 
 
 
