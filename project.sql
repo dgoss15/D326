@@ -219,5 +219,5 @@ SELECT COUNT(*) FROM detailed_report;
 SELECT COUNT(*) FROM summary_report;
 
 
-
+https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e2e54385-ffdc-4120-b8d2-b2cb0171f1e9
 
