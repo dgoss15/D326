@@ -82,3 +82,39 @@ LEFT JOIN payment AS p ON p.rental_id = r.rental_id;
 
 --Verify Detailed table
 SELECT * FROM detailed_report LIMIT 10;
+
+--CREATE TRIGGER ON Detailed Report
+CREATE TRIGGER trg_update_summary
+AFTER INSERT OR UPDATE OR DELETE ON detailed_report
+FOR EACH STATEMENT
+EXECUTE FUNCTION update_summary_report();
+
+--TEST rental
+INSERT INTO detailed_report (
+	rental_id,
+	customer_id,
+	store_id,
+	film_title,
+	rental_date,
+	due_date,
+	return_date,
+	days_late,
+	late_fee
+)
+VALUES (
+	99999,
+	123,
+	1,
+	'Test Movie',
+	'2024-07-01',
+	'2024-07-04',
+	'2024-07-05',
+	1,
+	2.50
+);
+--Summary report currently
+SELECT * FROM summary_report;
+
+--Remove test 
+DELETE FROM detailed_report
+WHERE rental_id = 99999;
